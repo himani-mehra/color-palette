@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>color palette</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #222;
+    }
+    #colors {
+      color: #fafafc;
+      font-weight: 500;
+    }
+  
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+    }
+  
+    .container {
+      display: flex;
+    }
+  
+    .image-container {
+      flex-basis: calc(50% - 20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image-wrapper {
+      margin-bottom: 20px;
+    }
+  
+    .styled-image {
+      width:50vh;
+      /* max-width: 150px; */
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+  
+    .styled-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  
+    pre {
+      background-color: #f0f0f0;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      margin-top: 1rem;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      width: 130vh;
+    }
+  
+    li {
+      background-color: #F5F5F5;
+      border: 2px solid #ddd;
+      width: 130px;
+      height: 80px;
+      padding: 0;
+      margin: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 6px;
+      font-family: 'Arial', sans-serif;
+      background: #ddd;
+      position: relative;
+      cursor: pointer;
+    }
+  
+    li:hover {
+      background-color: #E0E0E0;
+    }
+  
+    input[type="file"] {
+      display: none;
+    }
+  
+    .clickable-text {
+      font-size: 18px;
+  color: #666;
+  font-weight: bold;
+  cursor: pointer;
+  transition: font-size 0.3s ease;
+}
+
+.clickable-text:hover {
+  font-size: 170%;
+}
+
+  
+    .do-it-button {
+      background-color: transparent;
+      color: #666;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: text-shadow 0.3s ease;
+    }
+  
+    #upload-user-image.do-it-button {
+      color: grey;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    #upload-user-image.do-it-button:hover {
+      transform: translateZ(10px);
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  
+    .do-it-button:hover {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  
+    .left-column {
+      flex: 0 0 35%;
+      background-color: #E0E9F7;
+    }
+  
+    .right-column {
+      flex: 1;
+      max-height: 100vh;
+      overflow-y: scroll;
+      padding: 1rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .right-column::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .right-column h2 {
+      margin-top: 0;
+    }
+  
+    .button-container {
+      display: flex;
+      align-items: center;
+      /* gap: 40px; */
+      padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    }
+
+    /* Add margin, spacing, and padding to color palette items */
+.color-palette ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 135vh; */
+}
+
+/* .color-palette li {
+  
+  width: 130px;
+  height: 80px;
+  margin: 10px; 
+  padding: 10px; 
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+} */
+/* Update the CSS for color palette items */
+.color-palette li {
+  width: 130px;
+  height: 130px; /* Adjust the height as needed */
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  background-color: white; /* Add white background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.color-palette li span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px; /* Adjust the margin as needed */
+}
+
+</style>
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <h1>Reference image</h1>
+      <div class="image-container">
+        <img src="images/colorful.jpg" id="coke" class="styled-image">
+        <button id="do-coke" class="do-it-button">Do It!</button>
+        <img src="images/scene.jpg" id="me" class="styled-image">
+        <button id="do-me" class="do-it-button">Do It!</button>
+      </div>
+      <div class="upload-container">
+        <input type="file" id="user-image-input" accept="image/*">
+        <button id="upload-user-image" class="do-it-button">Upload</button>
+        <div id="uploaded-image-container" class="image-container">
+          <img id="user-image" class="styled-image">
+          <button id="do-user-image" class="do-it-button" style="display: none;">Do It!</button>
+          
+        </div>
+      </div>
+    </div>
+    <div class="right-column">
+      <h2>Where Painted Pixels Meet: A Canvas of Color Unfurled</h2>
+      <!-- <h2>From Image's Heart to Palette's Soul: A Chromatic Tale</h2> -->
+    
+      <!-- Move the color palette div here -->
+      <div class="button-container">
+        <span class="clickable-text" id="download-button">SVG⭳</span>
+        <span class="clickable-text" id="download-ase-button">ASE⭳</span>
+        <span class="clickable-text" id="google-palette-button">Google Palette</span>
+        <span class="clickable-text" id="generate-coolors-button">Coolors Palette</span>
+        <span class="clickable-text" id="take-screenshot">Screenshot⭳</span>
+      </div>
+      <div class="color-palette" id="output"></div>
+    
+    </div>
+    
+  </div>
+</body>
+
+
+    <!-- <div class="color-palette" id="output"> -->
+    </div>
+  </div>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/core-js/0.9.18/core.min.js"></script>
+  <script src="dist/colorcube.min.js"></script>
+  <script>
+//     const boxWidth = 60;
+// const spacing = 5; // Adjust the spacing as needed
+// colorBox.style.width = '60px';
+// colorBox.style.height = '60px';
+
+    var cc = new ColorCube(20, 0.2, 0.4);
+    function do_it(image_id) {
+      var image = document.getElementById(image_id);
+      var colors = cc.get_colors(image);
+      outputColors(colors);
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+  // Automatically extract the color palette for the first image (coke)
+  do_it('coke');
+});
+
+    function outputColors(colors) {
+      var output = document.getElementById('output');
+      var colors_list = document.createElement('ul');
+      colors_list.id = 'colors';
+      for (var c in colors) {
+        var color = colors[c];
+        console.log(color);
+        var colorBox = document.createElement('li');
+        colorBox.style.backgroundColor = color;
+        colorBox.textContent = color;
+        colors_list.appendChild(colorBox);
+      }
+      output.innerHTML = "<h2 style='text-align: center;'></h2>";
+      output.appendChild(colors_list);
+    }
+    var me_button = document.getElementById('do-me');
+    me_button.addEventListener("click", function() {
+      do_it('me');
+    });
+    var coke_button = document.getElementById('do-coke');
+    coke_button.addEventListener("click", function() {
+      do_it('coke');
+    });
+    function copyToClipboard(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    }
+    document.addEventListener('click', function (event) {
+      if (event.target && event.target.matches('li')) {
+        const hexCode = event.target.textContent;
+        event.target.textContent = 'Copied!';
+        copyToClipboard(hexCode);
+        setTimeout(function () {
+          event.target.textContent = hexCode;
+        }, 1000);
+      }
+    });
+    const downloadButton = document.getElementById('download-button');
+    downloadButton.addEventListener("click", downloadColorPaletteAsSVG);
+    function downloadColorPaletteAsSVG() {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      svg.setAttribute("width", "400");
+      svg.setAttribute("height", "100");
+      const colorBoxes = document.querySelectorAll('#colors li');
+      const numColors = colorBoxes.length;
+      const boxWidth = 100;
+      const spacing = (400 - (boxWidth * numColors)) / (numColors - 1);
+      colorBoxes.forEach((colorBox, index) => {
+        const color = colorBox.style.backgroundColor;
+        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        rect.setAttribute("x", (boxWidth + spacing) * index);
+        rect.setAttribute("y", 0);
+        rect.setAttribute("width", boxWidth);
+        rect.setAttribute("height", 100);
+        rect.setAttribute("rx", 4);
+        rect.setAttribute("ry", 4);
+        rect.setAttribute("fill", color);
+        svg.appendChild(rect);
+      });
+      const svgData = new XMLSerializer().serializeToString(svg);
+      const blob = new Blob([svgData], { type: "image/svg+xml" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "color_palette.svg";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function downloadColorPaletteAsASE() {
+      const colorBoxes = document.querySelectorAll('#colors li');
+      const colorsArray = [];
+      colorBoxes.forEach((colorBox) => {
+        const hexCode = colorBox.textContent;
+
+        const rgbColor = hexToRGB(hexCode);
+        colorsArray.push({
+          name: '',
+          model: 'RGB',
+          color: [rgbColor.r, rgbColor.g, rgbColor.b],
+        });
+      });
+      const aseBlob = createASEFile(colorsArray);
+      const url = URL.createObjectURL(aseBlob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "color_palette.ase";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+    function hexToRGB(hex) {
+      const bigint = parseInt(hex.slice(1), 16);
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      return { r, g, b };
+    }
+    function createASEFile(colors) {
+      const chunk = (type, data) => new Uint8Array([type.charCodeAt(0), ...data]);
+      const header = new Uint8Array([0x41, 0x53, 0x45, 0x46, 0x00, 0x01, 0x00, 0x00]);
+      const colorData = colors.flatMap((color) => {
+        const nameBytes = chunk('c', [...color.name].map((char) => char.charCodeAt(0)));
+        const modelBytes = chunk('c', [...color.model].map((char) => char.charCodeAt(0)));
+        const colorBytes = chunk('f', Float32Array.from(color.color));
+        return [...nameBytes, ...modelBytes, ...colorBytes];
+      });
+      const lengthBytes = chunk('L', Uint16Array.of(colorData.length));
+      const dataBytes = new Uint8Array([...lengthBytes, ...colorData]);
+      const aseData = new Uint8Array([...header, ...dataBytes]);
+      return new Blob([aseData], { type: 'application/octet-stream' });
+    }
+    const downloadASEButton = document.getElementById('download-ase-button');
+    downloadASEButton.addEventListener('click', downloadColorPaletteAsASE);
+    var selectedPalette = "";
+    var googlePalette = "";
+    function do_it(image_id) {
+      var image = document.getElementById(image_id);
+      var colors = cc.get_colors(image);
+      var hexColorCodes = colors.map(function (color) {
+        return color.replace('#', '');
+      });
+      var limitedColorCodes = hexColorCodes.slice(0, 5);
+      selectedPalette = hexColorCodes.join('-');
+      googlePalette = limitedColorCodes.join('-');
+      outputColors(colors);
+    }
+    function openGooglePalette() {
+      var googlePaletteURL = "https://artsexperiments.withgoogle.com/artpalette/colors/" + googlePalette;
+      window.open(googlePaletteURL, "_blank");
+    }
+    document
+      .getElementById("google-palette-button")
+      .addEventListener("click", openGooglePalette);
+
+        document.getElementById('take-screenshot').addEventListener('click', function () {
+      const container = document.querySelector('.container');
+      const screenHeight = window.innerHeight;
+      let scrollPosition = 0;
+
+      function scrollToBottom() {
+        if (scrollPosition + screenHeight < document.body.scrollHeight) {
+          scrollPosition += screenHeight;
+          window.scrollTo(0, scrollPosition);
+          setTimeout(scrollToBottom, 500);
+        } else {
+          captureScreenshot();
+        }
+      }
+
+      function captureScreenshot() {
+        html2canvas(container, {
+          scrollY: -window.scrollY,
+        }).then(function (canvas) {
+          const dataURL = canvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.href = dataURL;
+          link.download = 'full-page-screenshot.png';
+          link.click();
+        });
+      }
+
+      scrollToBottom();
+    });
+document.getElementById('upload-user-image').addEventListener('click', function () {
+  document.getElementById('user-image-input').click();
+});
+document.getElementById('do-user-image').addEventListener('click', function () {
+  const uploadedImage = document.getElementById('user-image');
+  if (uploadedImage.src) {
+    do_it('user-image');
+  }
+});
+document.getElementById('user-image-input').addEventListener('change', function (event) {
+  const uploadedImage = document.getElementById('user-image');
+  const doUserImageBtn = document.getElementById('do-user-image');
+  if (event.target.files.length > 0) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      uploadedImage.src = e.target.result;
+      uploadedImage.style.maxWidth = '100%';
+      uploadedImage.style.display = 'block';
+      doUserImageBtn.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+});
+function openCoolorsPalette() {
+  var coolorsURL = "https://coolors.co/" + selectedPalette;
+  var newWindow = window.open(coolorsURL, "_blank");
+}
+document
+  .getElementById("generate-coolors-button")
+  .addEventListener("click", openCoolorsPalette); 
+  
+  
+
+  // show color on hover :-
+  </script>
+</html>
