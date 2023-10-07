@@ -121,8 +121,11 @@
       transition: text-shadow 0.3s ease;
     }
     .upload-button {
+      width :25vh;
+      /* border : 2px #0f70e6 solid; */
       background-color: transparent;
-      color: #8f8d8d;
+      border-radius: 50px;
+      color: white;
       font-weight: 500;
       cursor: pointer;
     }
@@ -149,7 +152,7 @@
       flex-direction: column;
       align-items: center;
       flex: 0 0 35%;
-      background-color: #E0E9F7;
+      background-color: #212121;
     }
   
     .right-column {
@@ -227,23 +230,21 @@
   margin-top: 8px;
 }
 .upload-container {
-  background-color: rgb(253, 252, 252);
-  border-radius: 8px;
-  border: 2px gray dotted;
+  margin-top: 20px;
+  /* background-color: rgb(253, 252, 252);
+  border-radius: 12px;
+  border: 2px gray;
+  box-shadow: 0px 0px 10px rgba(0, 0.5, 0, 0.3); */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 50vh;
-  height: 16vh;
-}
-.upload-icon {
-  margin-top: 20px;
-  width: 30px;
+  justify-content: center;
+  /* width: 50vh;
+  height: 40vh; */
 }
 #camera-container {
+            width: 50vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-around;
         }
         video {
             max-width: 50%;
@@ -257,9 +258,6 @@
             cursor: pointer;
         }
         #open-camera-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #28a745;
             color: #fff;
             border: none;
             cursor: pointer;
@@ -270,27 +268,34 @@
             display: none;
         }
         .input-container {
-  display: flex;
-  align-items: center;
-}
+          display: flex;
+          align-items: center;
+        }
 
-.screenshot-palette {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 5px;
-}
+        .screenshot-palette {
+          flex: 1;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-right: 5px;
+        }
 
-.do-it-button {
-  padding: 8px 12px;
-  color: #4e4d4d;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+        .do-it-button {
+          padding: 8px 12px;
+          color: #4e4d4d;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
 
-
+        .upload-icon {
+          width: 60px;
+          height: 60px;
+        }
+        .camera-icon {
+          width: 50px;
+          height: 50px;
+        }
 
 </style>
   
@@ -301,25 +306,26 @@
       <h1>Reference image</h1>
       
       <div id="camera-container">
+        <input type="file" id="user-image-input" accept="image/*">
+        <button id="upload-user-image" class="upload-button">
+          <img class="upload-icon" src="./images/img-3.png"></img>
+          Upload
+        </button> 
+        
         <video id="camera-feed" autoplay></video>
-        <button id="open-camera-button">Open Camera</button>
+        <div id="open-camera-button"><img class="camera-icon" src="./images/camera.png">Camera</img></div>
         <button id="capture-button" style="display: none;">Capture Photo</button>
-        <button id="do-camera-image" class="do-it-button" style="display: none;">Do It!</button> <!-- Add this button -->
+        
+        <button id="do-camera-image" class="do-it-button" style="display: none;">Do It!</button>
         <img id="captured-image" alt="Captured Photo">
       </div>
-      
-      <div class="upload-container">
-        <input type="file" id="user-image-input" accept="image/*">
-        <img class="upload-icon" src="./images/upload-img2.png"></img>
-        <button id="upload-user-image" class="upload-button">Drag n drop file or <u>choose file</u></button>
-       
-        </div>
+              
 
 
-        <div class="input-container">
+        <!-- <div class="input-container">
           <input type="text" class="screenshot-palette" placeholder="Enter something...">
           <button class="do-it-button">Do It!</button>
-        </div>
+        </div> -->
         
 
         <div id="uploaded-image-container" class="image-container">
@@ -749,6 +755,8 @@ captureButton.addEventListener('click', function () {
   // ... (rest of the code to capture and display the image)
   document.getElementById('do-camera-image').style.display = 'block'; // Show the "Do It" button after capturing
 });
+
+
 
 
   </script>
