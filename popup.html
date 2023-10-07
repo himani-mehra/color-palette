@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>color palette</title>
+  <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      font-family: Poppins;
       color: #222;
     }
     #colors {
@@ -20,7 +23,7 @@
       color: white;
       text-align: center;
       padding: 1rem 0;
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: Poppins;
       font-weight: bold;
     }
   
@@ -29,7 +32,7 @@
     }
   
     .image-container {
-      flex-basis: calc(50% - 20px);
+      flex-basis: calc(8% - 20px);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -41,7 +44,6 @@
   
     .styled-image {
       width:50vh;
-      /* max-width: 150px; */
       height: auto;
       border-radius: 8px;
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
@@ -55,16 +57,10 @@
     }
   
     button {
-      background-color: #007BFF;
-      color: white;
       padding: 0.5rem 1rem;
       border: none;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      border-radius: 8px;
-      margin-top: 1rem;
+      font-family: Poppins;
     }
   
     pre {
@@ -72,8 +68,8 @@
       padding: 1rem;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-family: 'Courier New', monospace;
-      margin-top: 1rem;
+      font-family: Poppins;
+            margin-top: 1rem;
     }
   
     ul {
@@ -86,17 +82,15 @@
     }
   
     li {
-      background-color: #F5F5F5;
-      border: 2px solid #ddd;
       width: 130px;
-      height: 80px;
+      height: 48px;
+      flex-shrink: 0;
       padding: 0;
       margin: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       border-radius: 6px;
-      font-family: 'Arial', sans-serif;
-      background: #ddd;
+      font-family: Poppins;
       position: relative;
       cursor: pointer;
     }
@@ -110,16 +104,12 @@
     }
   
     .clickable-text {
-      font-size: 18px;
-  color: #666;
-  font-weight: bold;
-  cursor: pointer;
-  transition: font-size 0.3s ease;
-}
-
-.clickable-text:hover {
-  font-size: 170%;
-}
+      font-size: 13.5px;
+      color: #666;
+      font-weight: bold;
+      cursor: pointer;
+      transition: font-size 0.3s ease;
+    }
 
   
     .do-it-button {
@@ -129,6 +119,12 @@
       border: none;
       cursor: pointer;
       transition: text-shadow 0.3s ease;
+    }
+    .upload-button {
+      background-color: transparent;
+      color: #8f8d8d;
+      font-weight: 500;
+      cursor: pointer;
     }
   
     #upload-user-image.do-it-button {
@@ -149,11 +145,15 @@
     }
   
     .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       flex: 0 0 35%;
       background-color: #E0E9F7;
     }
   
     .right-column {
+      color: #2c2f3d;
       flex: 1;
       max-height: 100vh;
       overflow-y: scroll;
@@ -176,116 +176,188 @@
     .button-container {
       display: flex;
       align-items: center;
-      /* gap: 40px; */
       padding: 14px;
     display: flex;
     justify-content: space-between;
     width: -webkit-fill-available;
     }
 
-    /* Add margin, spacing, and padding to color palette items */
 .color-palette ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  /* width: 135vh; */
 }
-
-/* .color-palette li {
-  
-  width: 130px;
-  height: 80px;
-  margin: 10px; 
-  padding: 10px; 
-  cursor: pointer;
-  border-radius: 6px;
-  font-family: 'Arial', sans-serif;
-  position: relative;
-} */
-/* Update the CSS for color palette items */
 .color-palette li {
   width: 130px;
-  height: 130px; /* Adjust the height as needed */
+  height: 180px;
   margin: 10px;
-  padding: 10px;
   cursor: pointer;
   border-radius: 8px;
-  font-family: 'Arial', sans-serif;
-  position: relative;
-  background-color: white; /* Add white background */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  font-family: Poppins;
+  font-weight: 700;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+}
+.color-box {
+  margin-bottom: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  height: 70%;
 }
 
+.code {
+  padding-left: 10px;
+  width: 92%;
+  height: 15%;
+  font-size: 12px;
+  color: #3b393b;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.shadowed {
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
 .color-palette li span {
   font-size: 16px;
   font-weight: bold;
-  margin-top: 8px; /* Adjust the margin as needed */
+  margin-top: 8px;
+}
+.upload-container {
+  background-color: rgb(253, 252, 252);
+  border-radius: 8px;
+  border: 2px gray dotted;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vh;
+  height: 16vh;
+}
+.upload-icon {
+  margin-top: 20px;
+  width: 30px;
+}
+#camera-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        video {
+            max-width: 50%;
+        }
+        #capture-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #open-camera-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #captured-image {
+            max-width: 30%;
+            position: absolute;
+            display: none;
+        }
+        .input-container {
+  display: flex;
+  align-items: center;
 }
 
+.screenshot-palette {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.do-it-button {
+  padding: 8px 12px;
+  color: #4e4d4d;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
 </style>
-  
   
 </head>
 <body>
   <div class="container">
     <div class="left-column">
       <h1>Reference image</h1>
-      <div class="image-container">
-        <img src="images/colorful.jpg" id="coke" class="styled-image">
-        <button id="do-coke" class="do-it-button">Do It!</button>
-        <img src="images/scene.jpg" id="me" class="styled-image">
-        <button id="do-me" class="do-it-button">Do It!</button>
+      
+      <div id="camera-container">
+        <video id="camera-feed" autoplay></video>
+        <button id="open-camera-button">Open Camera</button>
+        <button id="capture-button" style="display: none;">Capture Photo</button>
+        <button id="do-camera-image" class="do-it-button" style="display: none;">Do It!</button> <!-- Add this button -->
+        <img id="captured-image" alt="Captured Photo">
       </div>
+      
       <div class="upload-container">
         <input type="file" id="user-image-input" accept="image/*">
-        <button id="upload-user-image" class="do-it-button">Upload</button>
+        <img class="upload-icon" src="./images/upload-img2.png"></img>
+        <button id="upload-user-image" class="upload-button">Drag n drop file or <u>choose file</u></button>
+       
+        </div>
+
+
+        <div class="input-container">
+          <input type="text" class="screenshot-palette" placeholder="Enter something...">
+          <button class="do-it-button">Do It!</button>
+        </div>
+        
+
         <div id="uploaded-image-container" class="image-container">
           <img id="user-image" class="styled-image">
           <button id="do-user-image" class="do-it-button" style="display: none;">Do It!</button>
-          
+        </div>
+      <div class="image-container">
+        <img src="images/scene.jpg" id="coke" class="styled-image">
+        <button id="do-coke" class="do-it-button">Do It!</button>
+      </div>
+      
+        <div class="button-container">
+          <span class="clickable-text" id="download-button">SVG⭳</span>
+          <span class="clickable-text" id="download-ase-button">ASE⭳</span>
+          <span class="clickable-text" id="take-screenshot">Screenshot⭳</span>
+          <span class="clickable-text" id="google-palette-button">Google Palette</span>
+          <span class="clickable-text" id="generate-coolors-button">Coolors Palette</span>
         </div>
       </div>
-    </div>
     <div class="right-column">
       <h2>Where Painted Pixels Meet: A Canvas of Color Unfurled</h2>
-      <!-- <h2>From Image's Heart to Palette's Soul: A Chromatic Tale</h2> -->
-    
-      <!-- Move the color palette div here -->
-      <div class="button-container">
-        <span class="clickable-text" id="download-button">SVG⭳</span>
-        <span class="clickable-text" id="download-ase-button">ASE⭳</span>
-        <span class="clickable-text" id="google-palette-button">Google Palette</span>
-        <span class="clickable-text" id="generate-coolors-button">Coolors Palette</span>
-        <span class="clickable-text" id="take-screenshot">Screenshot⭳</span>
-      </div>
       <div class="color-palette" id="output"></div>
+      <div id="captured-image-palette" class="color-palette"></div>
+
     
     </div>
     
   </div>
 </body>
-
-
-    <!-- <div class="color-palette" id="output"> -->
     </div>
   </div>
+  <script src="dist/colorcube.min.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/core-js/0.9.18/core.min.js"></script>
   <script src="dist/colorcube.min.js"></script>
   <script>
-//     const boxWidth = 60;
-// const spacing = 5; // Adjust the spacing as needed
-// colorBox.style.width = '60px';
-// colorBox.style.height = '60px';
-
+    
     var cc = new ColorCube(20, 0.2, 0.4);
     function do_it(image_id) {
       var image = document.getElementById(image_id);
@@ -294,29 +366,118 @@
     }
 
     window.addEventListener('DOMContentLoaded', function () {
-  // Automatically extract the color palette for the first image (coke)
   do_it('coke');
 });
+ 
 
-    function outputColors(colors) {
-      var output = document.getElementById('output');
-      var colors_list = document.createElement('ul');
-      colors_list.id = 'colors';
-      for (var c in colors) {
-        var color = colors[c];
-        console.log(color);
-        var colorBox = document.createElement('li');
-        colorBox.style.backgroundColor = color;
-        colorBox.textContent = color;
-        colors_list.appendChild(colorBox);
-      }
-      output.innerHTML = "<h2 style='text-align: center;'></h2>";
-      output.appendChild(colors_list);
-    }
-    var me_button = document.getElementById('do-me');
-    me_button.addEventListener("click", function() {
-      do_it('me');
+function outputColors(colors) {
+  var output = document.getElementById('output');
+  var colors_list = document.createElement('ul');
+  colors_list.id = 'colors';
+  for (var c in colors) {
+    var color = colors[c];
+    var colorBox = document.createElement('li');
+    var upperColorBox = document.createElement('div');
+    upperColorBox.className = 'color-box';
+    upperColorBox.style.backgroundColor = color;
+    upperColorBox.dataset.hexCode = color;
+
+    var hexCode = document.createElement('div');
+    hexCode.className = 'hex-code';
+    hexCode.textContent = color;
+    hexCode.addEventListener('click', function() {
+      var code = this.textContent;
+      copyToClipboard(code);
+      var codeBox = this;
+      codeBox.textContent = 'Copied!';
+      setTimeout(function() {
+        codeBox.textContent = code;
+      }, 1000);
     });
+
+    var rgbCode = document.createElement('div');
+    rgbCode.className = 'code';
+    rgbCode.textContent = getRGBCode(color);
+    rgbCode.addEventListener('click', function() {
+      var code = this.textContent;
+      copyToClipboard(code);
+      var codeBox = this;
+      codeBox.textContent = 'Copied!';
+      setTimeout(function() {
+        codeBox.textContent = code;
+      }, 1000);
+    });
+
+    var hslCode = document.createElement('div');
+    hslCode.className = 'code';
+    hslCode.textContent = getHSLCode(color);
+    hslCode.addEventListener('click', function() {
+      var code = this.textContent;
+      copyToClipboard(code);
+      var codeBox = this;
+      codeBox.textContent = 'Copied!';
+      setTimeout(function() {
+        codeBox.textContent = code;
+      }, 1000);
+    });
+    var hexCode = document.createElement('div');
+    hexCode.className = 'code';
+    hexCode.textContent = color;
+    hexCode.addEventListener('click', function() {
+      var code = this.textContent;
+      copyToClipboard(code);
+      var codeBox = this;
+      codeBox.textContent = 'Copied!';
+      setTimeout(function() {
+        codeBox.textContent = code;
+      }, 1000);
+    });
+
+    colorBox.appendChild(upperColorBox);
+    colorBox.appendChild(hexCode);
+    colorBox.appendChild(rgbCode);
+    colorBox.appendChild(hslCode);
+    colors_list.appendChild(colorBox);
+  }
+  output.innerHTML = "<h2 style='text-align: center;'></h2>";
+  output.appendChild(colors_list);
+}
+
+
+function getRGBCode(hexCode) {
+  var hex = hexCode.slice(1);
+  var bigint = parseInt(hex, 16);
+  var r = (bigint >> 16) & 255;
+  var g = (bigint >> 8) & 255;
+  var b = bigint & 255;
+  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+
+function getHSLCode(hexCode) {
+  var rgbCode = getRGBCode(hexCode);
+  var rgb = rgbCode.match(/\d+/g);
+  var r = rgb[0] / 255;
+  var g = rgb[1] / 255;
+  var b = rgb[2] / 255;
+  var max = Math.max(r, g, b);
+  var min = Math.min(r, g, b);
+  var l = (max + min) / 2;
+  var s = 0;
+  var h = 0;
+  if (max !== min) {
+    s = l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min);
+    switch (max) {
+      case r: h = (g - b) / (max - min) + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / (max - min) + 2; break;
+      case b: h = (r - g) / (max - min) + 4; break;
+    }
+    h /= 6;
+  }
+  h = Math.round(h * 360);
+  s = Math.round(s * 100);
+  l = Math.round(l * 100);
+  return 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
+}
     var coke_button = document.getElementById('do-coke');
     coke_button.addEventListener("click", function() {
       do_it('coke');
@@ -496,9 +657,99 @@ function openCoolorsPalette() {
 document
   .getElementById("generate-coolors-button")
   .addEventListener("click", openCoolorsPalette); 
-  
-  
 
-  // show color on hover :-
+  const videoElement = document.getElementById('camera-feed');
+        const captureButton = document.getElementById('capture-button');
+        const openCameraButton = document.getElementById('open-camera-button');
+        const capturedImage = document.getElementById('captured-image');
+
+        openCameraButton.addEventListener('click', function () {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    videoElement.srcObject = stream;
+                    captureButton.style.display = 'block';
+                })
+                .catch(function (error) {
+                    console.error('Error accessing the camera:', error);
+                });
+        });
+
+        captureButton.addEventListener('click', function () {
+            // Stop the camera stream
+            const stream = videoElement.srcObject;
+            const tracks = stream.getTracks();
+            tracks.forEach(track => track.stop());
+
+            // Capture a photo
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = videoElement.videoWidth;
+            canvas.height = videoElement.videoHeight;
+            context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+            // Convert the captured frame to a data URL (image)
+            const imageDataURL = canvas.toDataURL('image/jpeg');
+
+            // Display the captured image
+            capturedImage.src = imageDataURL;
+            capturedImage.style.display = 'block';
+        });
+
+
+        // Find the captured image and the color palette div
+const userCapturedImage = document.getElementById('captured-image');
+const colorPalette = document.getElementById('captured-image-palette');
+
+// Function to extract colors from the captured image and display them
+function displayColorPalette() {
+  // Check if the user-captured image has loaded
+  if (userCapturedImage.complete) {
+    // Use the ColorCube library to extract colors (assuming you have this library included)
+    var colors = cc.get_colors(userCapturedImage);
+
+    // Clear the existing content of the color palette div
+    colorPalette.innerHTML = '';
+
+    // Loop through the extracted colors and display them
+    for (var c in colors) {
+      var color = colors[c];
+      var colorBox = document.createElement('div');
+      colorBox.className = 'color-box';
+      colorBox.style.backgroundColor = color;
+      colorPalette.appendChild(colorBox);
+    }
+  }
+}
+
+// Call the displayColorPalette function when the user-captured image is loaded
+userCapturedImage.addEventListener('load', displayColorPalette);
+// Add an event listener to the "Do It" button for the camera image
+document.getElementById('do-camera-image').addEventListener('click', function () {
+  const capturedImage = document.getElementById('captured-image');
+  if (capturedImage.src) {
+    do_it('captured-image');
+  }
+});
+
+// Add an event listener to the "Open Camera" button
+document.getElementById('open-camera-button').addEventListener('click', function () {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      videoElement.srcObject = stream;
+      captureButton.style.display = 'block';
+      document.getElementById('do-camera-image').style.display = 'none'; // Hide the "Do It" button initially
+    })
+    .catch(function (error) {
+      console.error('Error accessing the camera:', error);
+    });
+});
+
+// Add an event listener to the "Capture" button
+captureButton.addEventListener('click', function () {
+  // ... (rest of the code to capture and display the image)
+  document.getElementById('do-camera-image').style.display = 'block'; // Show the "Do It" button after capturing
+});
+
+
   </script>
 </html>
