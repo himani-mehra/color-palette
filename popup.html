@@ -366,7 +366,7 @@ header {
           margin-bottom: -6px;
         }
         .camera-icon {
-          margin-bottom: -6px;
+          margin-bottom: -7px;
           width: 20px;
           height: 20px;
         }
@@ -489,10 +489,6 @@ header {
           <img id="user-image" class="styled-image">
           <button id="do-user-image" class="do-it-button" style="display: none;">Do It!</button>
         </div>
-      <div class="image-container">
-        <img src="images/scene.jpg" id="coke" class="styled-image">
-        <button id="do-coke" class="do-it-button">Do It!</button>
-      </div>
       
         <div class="button-container">
           <span class="clickable-text" id="download-button">SVG⭳</span>
@@ -501,7 +497,12 @@ header {
           <span class="clickable-text" id="google-palette-button">Google Palette</span>
           <span class="clickable-text" id="generate-coolors-button">Coolors Palette</span>
         </div>
+        <div class="image-container">
+          <img src="images/scene.jpg" id="coke" class="styled-image">
+          <button id="do-coke" class="do-it-button">Do It!</button>
+        </div>
       </div>
+      
     <div class="right-column">
       <h2>Where Painted Pixels Meet: A Canvas of Color Unfurled</h2>
       <div class="color-palette" id="output"></div>
@@ -895,6 +896,25 @@ document.getElementById('open-camera-button').addEventListener('click', function
 captureButton.addEventListener('click', function () {
   document.getElementById('do-camera-image').style.display = 'block';
 });
+openCameraButton.addEventListener('click', function () {
+    console.log('Button clicked'); // Add this line to check if the button click event is firing.
+    
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (newStream) {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+            }
+            
+            stream = newStream;
+            videoElement.srcObject = stream;
+            captureButton.style.display = 'block';
+            capturedImage.style.display = 'none';
+        })
+        .catch(function (error) {
+            console.error('Error accessing the camera:', error);
+        });
+});
+
 
   </script>
 </html>
