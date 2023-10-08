@@ -206,13 +206,14 @@ header {
       transition: text-shadow 0.3s ease;
     }
     .upload-button {
-      display: flex;
-      flex-direction: column;
-      width :25vh;
-      background-color: transparent;
+     width: 25vh;
+     height: 8vh;
+      background-color: rgb(67, 170, 240);
       border-radius: 50px;
       color: white;
       cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
     }
   
     #upload-user-image.do-it-button {
@@ -360,27 +361,100 @@ header {
           margin-right: 5px;
         }
         .upload-icon {
-          width: 60px;
-          height: 60px;
+          width: 25px;
+          height: 25px;
+          margin-bottom: -6px;
         }
         .camera-icon {
-          margin-top: 11px;
-          width: 50px;
-          height: 50px;
+          margin-bottom: -6px;
+          width: 20px;
+          height: 20px;
         }
         .icons-both {
-          width : 50vh;
-          display: flex;
-          justify-content: space-around;
-        }
-        #open-camera-button {
+          border: 3px rgb(104, 102, 102) dotted;
+          background-color: #2c2b2b;
+          border-radius: 16px;
+          width : 48vh;
+          height: 28vh;
           display: flex;
           flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
         }
+        /* #open-camera-button {
+          display: flex;
+          flex-direction: column;
+        } */
         .camera-text {
-          margin-top:6px;
+          margin-top:-26px;
         }
+        @media (max-width: 767px) {
+  .color-palette ul {
+    width: 100%; /* Set the color palette list to occupy the full width */
+    overflow-x: scroll; /* Add horizontal scrolling for smaller screens */
+    white-space: nowrap; /* Prevent text wrapping within list items */
+  }
 
+  .color-palette li {
+    display: inline-block; /* Make list items display inline */
+    width: 130px; /* Set a fixed width for each color box */
+    height: 180px;
+    margin: 10px; /* Adjust margin as needed for spacing */
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: Poppins;
+    font-weight: 700;
+  }
+  @media (max-width: 767px) {
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    align-items: center;
+    margin-top: 20px; /* Increase the margin for spacing */
+  }
+
+  /* Adjust individual button styles for small screens if needed */
+  .clickable-text {
+    margin-bottom: 10px; /* Increase space between buttons */
+  }
+}
+
+@media (max-width: 767px) {
+.color-box {
+  margin-bottom: -45px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  height: 70%;
+}
+}
+
+/* CSS for mobile devices */
+@media (max-width: 768px) {
+  .image-container {
+    margin-top: 20px;
+  }
+
+  .color-palette {
+    margin-top: 10px;
+  }
+}
+
+/* CSS for desktop devices */
+@media (min-width: 769px) {
+  .image-container {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .color-palette {
+    float: left;
+    margin-top: 0;
+  }
+}
+
+}
+
+  
 
 </style>
   
@@ -394,11 +468,13 @@ header {
         <input type="file" id="user-image-input" accept="image/*">
        <div class="icons-both">
         <button id="upload-user-image" class="upload-button">
-          <img class="upload-icon" src="./images/img-3.png"></img>
-          Upload
+          Upload file
+          <img class="upload-icon" src="./images/white-upload.png"></img>
         </button> 
         <div id="open-camera-button">
-          <img class="camera-icon" src="./images/camera.png"><span class="camera-text">Camera</span></img>
+         
+          <span class="camera-text">or capture image</span>
+          <img class="camera-icon" src="./images/white-camera.png"></img>
         </div>
        </div>
         
