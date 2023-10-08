@@ -10,6 +10,93 @@
   
   <style>
     body {
+  font-family: Poppins;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #212121;
+  padding: 1rem;
+}
+
+.right-column {
+  color: #2c2f3d;
+  padding: 1rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.right-column::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .left-column {
+    flex: 0 0 35%;
+    padding: 1rem;
+  }
+
+  .right-column {
+    flex: 1;
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+@media (max-width: 767px) {
+  .right-column {
+    max-height: none;
+    overflow-y: scroll;
+    padding: 1rem;
+    scrollbar-width: thin;
+    -ms-overflow-style: thin;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-column::-webkit-scrollbar {
+    width:
+  }
+}
+
+@media (max-width: 767px) {
+  .left-column {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .right-column {
+    max-height: none;
+    overflow-y: visible;
+    padding: 0;
+  }
+}
+
+    body {
       font-family: Poppins;
       color: #222;
     }
@@ -105,17 +192,15 @@
   
     .clickable-text {
       font-size: 13.5px;
-      color: #666;
-      font-weight: bold;
+      color: white;
       cursor: pointer;
       transition: font-size 0.3s ease;
     }
 
   
     .do-it-button {
+      color: white;
       background-color: transparent;
-      color: #666;
-      font-weight: bold;
       border: none;
       cursor: pointer;
       transition: text-shadow 0.3s ease;
@@ -124,11 +209,9 @@
       display: flex;
       flex-direction: column;
       width :25vh;
-      /* border : 2px #0f70e6 solid; */
       background-color: transparent;
       border-radius: 50px;
       color: white;
-      /* font-weight: 500; */
       cursor: pointer;
     }
   
@@ -233,15 +316,9 @@
 }
 .upload-container {
   margin-top: 20px;
-  /* background-color: rgb(253, 252, 252);
-  border-radius: 12px;
-  border: 2px gray;
-  box-shadow: 0px 0px 10px rgba(0, 0.5, 0, 0.3); */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: 50vh;
-  height: 40vh; */
 }
 #camera-container {
             width: 50vh;
@@ -255,7 +332,6 @@
         #capture-button {
             margin-top: 20px;
             padding: 10px 20px;
-            /* background-color: #007bff; */
             color: #fff;
             border: none;
             cursor: pointer;
@@ -283,15 +359,6 @@
           border-radius: 4px;
           margin-right: 5px;
         }
-
-        .do-it-button {
-          padding: 8px 12px;
-          color: #4e4d4d;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-
         .upload-icon {
           width: 60px;
           height: 60px;
@@ -683,20 +750,19 @@ const captureButton = document.getElementById('capture-button');
 const openCameraButton = document.getElementById('open-camera-button');
 const capturedImage = document.getElementById('captured-image');
 
-let stream; // Declare a variable to hold the camera stream
+let stream;
 
 openCameraButton.addEventListener('click', function () {
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (newStream) {
-            // Stop the previous stream if it exists
             if (stream) {
                 stream.getTracks().forEach(track => track.stop());
             }
             
-            stream = newStream; // Assign the new stream to the variable
+            stream = newStream;
             videoElement.srcObject = stream;
             captureButton.style.display = 'block';
-            capturedImage.style.display = 'none'; // Hide the captured image
+            capturedImage.style.display = 'none';
         })
         .catch(function (error) {
             console.error('Error accessing the camera:', error);
@@ -705,37 +771,23 @@ openCameraButton.addEventListener('click', function () {
 
 captureButton.addEventListener('click', function () {
     if (stream) {
-        // Capture a photo
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
         canvas.width = videoElement.videoWidth;
         canvas.height = videoElement.videoHeight;
         context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-
-        // Convert the captured frame to a data URL (image)
         const imageDataURL = canvas.toDataURL('image/jpeg');
-
-        // Display the captured image
         capturedImage.src = imageDataURL;
         capturedImage.style.display = 'block';
     }
 });
-
-        // Find the captured image and the color palette div
 const userCapturedImage = document.getElementById('captured-image');
 const colorPalette = document.getElementById('captured-image-palette');
 
-// Function to extract colors from the captured image and display them
 function displayColorPalette() {
-  // Check if the user-captured image has loaded
   if (userCapturedImage.complete) {
-    // Use the ColorCube library to extract colors (assuming you have this library included)
     var colors = cc.get_colors(userCapturedImage);
-
-    // Clear the existing content of the color palette div
     colorPalette.innerHTML = '';
-
-    // Loop through the extracted colors and display them
     for (var c in colors) {
       var color = colors[c];
       var colorBox = document.createElement('div');
@@ -745,38 +797,28 @@ function displayColorPalette() {
     }
   }
 }
-
-// Call the displayColorPalette function when the user-captured image is loaded
 userCapturedImage.addEventListener('load', displayColorPalette);
-// Add an event listener to the "Do It" button for the camera image
 document.getElementById('do-camera-image').addEventListener('click', function () {
   const capturedImage = document.getElementById('captured-image');
   if (capturedImage.src) {
     do_it('captured-image');
   }
 });
-
-// Add an event listener to the "Open Camera" button
 document.getElementById('open-camera-button').addEventListener('click', function () {
   navigator.mediaDevices.getUserMedia({ video: true })
     .then(function (stream) {
       videoElement.srcObject = stream;
       captureButton.style.display = 'block';
-      document.getElementById('do-camera-image').style.display = 'none'; // Hide the "Do It" button initially
+      document.getElementById('do-camera-image').style.display = 'none';
     })
     .catch(function (error) {
       console.error('Error accessing the camera:', error);
     });
 });
 
-// Add an event listener to the "Capture" button
 captureButton.addEventListener('click', function () {
-  // ... (rest of the code to capture and display the image)
-  document.getElementById('do-camera-image').style.display = 'block'; // Show the "Do It" button after capturing
+  document.getElementById('do-camera-image').style.display = 'block';
 });
-
-
-
 
   </script>
 </html>
