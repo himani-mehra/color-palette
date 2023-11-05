@@ -22,29 +22,13 @@
       flex-direction: column;
     }
 
-    header {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      font-family: Poppins;
-      font-weight: bold;
-    }
-
     .left-column {
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       background-color: #212121;
       padding: 1rem;
-    }
-
-    .right-column {
-      color: #2c2f3d;
-      padding: 1rem;
-      overflow-y: scroll;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
     }
 
     .right-column::-webkit-scrollbar {
@@ -65,6 +49,7 @@
         flex: 1;
         max-height: none;
         overflow-y: visible;
+       
       }
     }
 
@@ -78,10 +63,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .right-column::-webkit-scrollbar {
-        width:
       }
     }
 
@@ -185,23 +166,20 @@
       cursor: pointer;
     }
 
-    li:hover {
-      background-color: #E0E0E0;
-    }
-
     input[type="file"] {
       display: none;
     }
 
     .clickable-text {
-      font-size: 13.5px;
+      font-size: 14px;
       color: white;
       cursor: pointer;
-      transition: font-size 0.3s ease;
     }
 
 
     .do-it-button {
+      font-family: 'classic notes';
+      font-size: 17px;
       color: white;
       background-color: transparent;
       border: none;
@@ -238,11 +216,13 @@
     }
 
     .left-column {
+      width: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       flex: 0 0 35%;
-      background-color: #212121;
+      /* background-color: #212121; */
+      background-color: #525251;
     }
 
     .right-column {
@@ -271,6 +251,7 @@
       align-items: center;
       padding: 14px;
       display: flex;
+      margin-bottom: 10px;
       justify-content: space-between;
       width: -webkit-fill-available;
     }
@@ -338,31 +319,6 @@
       flex-direction: column;
     }
 
-    video {
-      max-width: 50%;
-    }
-
-    #capture-button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    #open-camera-button {
-      font-size: 13.5px;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    #captured-image {
-      max-width: 15%;
-      position: absolute;
-      display: none;
-    }
-
     .input-container {
       display: flex;
       align-items: center;
@@ -377,15 +333,35 @@
     }
 
     .upload-icon {
-      width: 25px;
-      height: 25px;
-      margin-bottom: -6px;
+      width: 27%;
+      animation: iconScale 2s infinite alternate;
     }
 
-    .camera-icon {
-      margin-bottom: -7px;
-      width: 20px;
-      height: 20px;
+    @keyframes blink {
+
+      from,
+      to {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+
+    @keyframes iconScale {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .upload-btn {
+      background-color: transparent;
     }
 
     .icons-both {
@@ -400,32 +376,24 @@
       justify-content: space-around;
     }
 
-    /* #open-camera-button {
-          display: flex;
-          flex-direction: column;
-        } */
-    .camera-text {
-      margin-top: -26px;
+    @font-face {
+      font-family: "classic notes";
+      src: url("Classic Notes.ttf") format("truetype");
     }
+
 
     @media (max-width: 767px) {
       .color-palette ul {
         width: 100%;
-        /* Set the color palette list to occupy the full width */
         overflow-x: scroll;
-        /* Add horizontal scrolling for smaller screens */
         white-space: nowrap;
-        /* Prevent text wrapping within list items */
       }
 
       .color-palette li {
         display: inline-block;
-        /* Make list items display inline */
         width: 130px;
-        /* Set a fixed width for each color box */
         height: 180px;
         margin: 10px;
-        /* Adjust margin as needed for spacing */
         cursor: pointer;
         border-radius: 8px;
         font-family: Poppins;
@@ -435,16 +403,14 @@
       @media (max-width: 767px) {
         .button-container {
           flex-direction: column;
-          /* Stack buttons vertically on small screens */
           align-items: center;
           margin-top: 20px;
-          /* Increase the margin for spacing */
+
         }
 
-        /* Adjust individual button styles for small screens if needed */
         .clickable-text {
           margin-bottom: 10px;
-          /* Increase space between buttons */
+          font-family: 'classic notes';
         }
       }
 
@@ -458,7 +424,6 @@
         }
       }
 
-      /* CSS for mobile devices */
       @media (max-width: 768px) {
         .image-container {
           margin-top: 20px;
@@ -469,7 +434,6 @@
         }
       }
 
-      /* CSS for desktop devices */
       @media (min-width: 769px) {
         .image-container {
           float: left;
@@ -483,43 +447,97 @@
       }
 
     }
+
+    .footer-icon {
+      width: 100vh;
+      text-align: center;
+      font-family: 'classic notes';
+    }
+
+    header {
+      background-color: #93938A;
+      color: white;
+      padding: 1rem 0;
+      font-family: Poppins;
+      font-weight: bold;
+    }
+
+    .linkedIn-img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .heading {
+      font-size: 27px;
+      font-weight: bold;
+      font-family: 'classic notes';
+    }
+
+    .left-header {
+      font-family: 'classic notes';
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+    }
+    .last-sec {
+      width: 70vh;
+      margin-top:50px;
+      display: flex;
+    }
+    .second-sub {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .need-sample {
+      font-family: 'classic notes';
+      color: white;
+      margin-top: 10px;
+    }
+    .need-sample-2 {
+      font-family: 'classic notes';
+      color: white;
+    }
+    .sample-image {
+      width: 50vh;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .sample-img {
+      width: 55px;
+      height: 55px;
+      margin: 10px;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+      cursor: pointer;
+      transition: width 0.3s, height 0.3s;
+    }
+    .sample-img:hover {
+      width: 60px;
+      height: 60px;
+}
   </style>
 
 </head>
 
 <body>
+
   <div class="container">
     <div class="left-column">
-      <h1>Reference image</h1>
+      <div class="left-header" id="header"></div>
 
       <div id="camera-container">
-        <!-- <input type="file" id="user-image-input" accept="image/*"> -->
         <input type="file" id="user-image-input" accept="image/jpeg, image/png">
+        <button class="upload-btn" id="upload-user-image">
 
-        <div class="icons-both">
-          <button id="upload-user-image" class="upload-button">
-            Upload file
-            <img class="upload-icon" src="./images/white-upload.png"></img>
-          </button>
-          <div id="open-camera-button">
-
-            <span class="camera-text">or capture image <input type="file" id="user-image-input" accept="image/*"
-                capture="camera">
-            </span>
-            <img class="camera-icon" src="./images/white-camera.png"></img>
-          </div>
-        </div>
-
-        <video id="camera-feed" autoplay></video>
-
-        <button id="capture-button" style="display: none;">Capture Photo</button>
-
-        <button id="do-camera-image" class="do-it-button" style="display: none;">Do It!</button>
-        <img id="captured-image" alt="Captured Photo">
+          <img class="upload-icon" src="./images/cloud-upload.png">
+        </button>
       </div>
       <div id="uploaded-image-container" class="image-container">
         <img id="user-image" class="styled-image">
-        <button id="do-user-image" class="do-it-button" style="display: none;">Do It!</button>
+        <button id="do-user-image" class="do-it-button" style="display: none;">Try it out!</button>
       </div>
 
       <div class="button-container">
@@ -528,25 +546,41 @@
         <span class="clickable-text" id="take-screenshot">Screenshot⭳</span>
         <span class="clickable-text" id="google-palette-button">Google Palette</span>
         <span class="clickable-text" id="generate-coolors-button">Coolors Palette</span>
+
       </div>
       <div class="image-container">
         <img src="images/scene.jpg" id="coke" class="styled-image">
-        <button id="do-coke" class="do-it-button">Do It!</button>
+        <button id="do-coke" class="do-it-button"></button>
       </div>
+     <div class="last-sec">
+     <div class="second-sub">
+      <div class="need-sample">No image?</div>
+      <div class="need-sample-2">Try one of these :</div>
+     </div>
+      <div class="sample-image" id="sample-image">
+        <img class="sample-img" id="imageId-1" src="./images/images.jpg">
+        <img class="sample-img" id="imageId-2" src="./images/samplee.webp">
+        <img class="sample-img" id="imageId-3" src="./images/download.jpg">
+        <img class="sample-img" id="imageId-4" src="./images/room.jpg">
+      </div>
+     </div>
     </div>
 
     <div class="right-column">
-      <h2>Where Painted Pixels Meet: A Canvas of Color Unfurled</h2>
+      <div class="heading">Where Painted Pixels Meet : A Canvas of Color Unfurled</div>
       <div class="color-palette" id="output"></div>
       <div id="captured-image-palette" class="color-palette"></div>
-
+      <div class="footer-icon"> Made with ❤️ by <a class="bold-name" href="https://www.linkedin.com/in/himani-mehra/"
+          target="_blank"><b><u>Himani Mehra</u></b></a>
+      </div>
 
     </div>
 
+
   </div>
+
+
 </body>
-</div>
-</div>
 <script src="dist/colorcube.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
@@ -564,6 +598,22 @@
   window.addEventListener('DOMContentLoaded', function () {
     do_it('coke');
   });
+  document.addEventListener("DOMContentLoaded", function () {
+    const text = "Upload any image...";
+    const header = document.getElementById("header");
+    let index = 0;
+
+    function addLetter() {
+      if (index < text.length) {
+        header.textContent += text.charAt(index);
+        index++;
+        setTimeout(addLetter, 100); // Adjust the time interval as needed
+      }
+    }
+
+    addLetter();
+  });
+
 
 
   function outputColors(colors) {
@@ -794,6 +844,7 @@
     .addEventListener("click", openGooglePalette);
 
   document.getElementById('take-screenshot').addEventListener('click', function () {
+    console.log('take-screenshot button clicked');
     const container = document.querySelector('.container');
     const screenHeight = window.innerHeight;
     let scrollPosition = 0;
@@ -802,16 +853,20 @@
       if (scrollPosition + screenHeight < document.body.scrollHeight) {
         scrollPosition += screenHeight;
         window.scrollTo(0, scrollPosition);
+        console.log('Scrolled to position:', scrollPosition);
         setTimeout(scrollToBottom, 500);
       } else {
+        console.log('Reached the bottom');
         captureScreenshot();
       }
     }
 
     function captureScreenshot() {
+      console.log('Capturing screenshot...');
       html2canvas(container, {
         scrollY: -window.scrollY,
       }).then(function (canvas) {
+        console.log('Screenshot captured.');
         const dataURL = canvas.toDataURL('image/png');
         const link = document.createElement('a');
         link.href = dataURL;
@@ -822,6 +877,7 @@
 
     scrollToBottom();
   });
+  
   document.getElementById('upload-user-image').addEventListener('click', function () {
     document.getElementById('user-image-input').click();
   });
@@ -860,36 +916,6 @@
   const capturedImage = document.getElementById('captured-image');
 
   let stream;
-
-  openCameraButton.addEventListener('click', function () {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (newStream) {
-        if (stream) {
-          stream.getTracks().forEach(track => track.stop());
-        }
-
-        stream = newStream;
-        videoElement.srcObject = stream;
-        captureButton.style.display = 'block';
-        capturedImage.style.display = 'none';
-      })
-      .catch(function (error) {
-        console.error('Error accessing the camera:', error);
-      });
-  });
-
-  captureButton.addEventListener('click', function () {
-    if (stream) {
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      canvas.width = videoElement.videoWidth;
-      canvas.height = videoElement.videoHeight;
-      context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-      const imageDataURL = canvas.toDataURL('image/jpeg');
-      capturedImage.src = imageDataURL;
-      capturedImage.style.display = 'block';
-    }
-  });
   const userCapturedImage = document.getElementById('captured-image');
   const colorPalette = document.getElementById('captured-image-palette');
 
@@ -906,55 +932,28 @@
       }
     }
   }
-  userCapturedImage.addEventListener('load', displayColorPalette);
-  document.getElementById('do-camera-image').addEventListener('click', function () {
-    const capturedImage = document.getElementById('captured-image');
-    if (capturedImage.src) {
-      do_it('captured-image');
-    }
-  });
-  document.getElementById('open-camera-button').addEventListener('click', function () {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (stream) {
-        videoElement.srcObject = stream;
-        captureButton.style.display = 'block';
-        document.getElementById('do-camera-image').style.display = 'none';
-      })
-      .catch(function (error) {
-        console.error('Error accessing the camera:', error);
-      });
-  });
+const sampleImages = document.querySelectorAll('.sample-img');
+const targetImage = document.getElementById('coke');
 
-  captureButton.addEventListener('click', function () {
-    document.getElementById('do-camera-image').style.display = 'block';
+sampleImages.forEach(sampleImg => {
+  sampleImg.addEventListener('click', function() {
+    targetImage.src = this.src;
+    console.log(targetImage.src);
+    const imageId = this.id;
+    do_it(imageId);
   });
-  openCameraButton.addEventListener('click', function () {
-    console.log('Button clicked'); // Add this line to check if the button click event is firing.
-
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (newStream) {
-        if (stream) {
-          stream.getTracks().forEach(track => track.stop());
-        }
-
-        stream = newStream;
-        videoElement.srcObject = stream;
-        captureButton.style.display = 'block';
-        capturedImage.style.display = 'none';
-      })
-      .catch(function (error) {
-        console.error('Error accessing the camera:', error);
-      });
-  });
+});
 
 
 
 
 </script>
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="himanimehra" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-<form>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+  data-id="himanimehra" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF"
+  data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+<!-- <form>
   <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_MmC4kpnlGAJmOT"
     async> </script>
-</form>
+</form> -->
 
 </html>
