@@ -245,4 +245,8 @@ header {
     .last-sec {
         width: 52vh;
     }
+    .button-container {
+        display: flex;
+        flex-direction: column;
+    }
   }

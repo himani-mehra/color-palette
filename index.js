@@ -288,7 +288,15 @@ document.getElementById('take-screenshot').addEventListener('click', function ()
 
   scrollToBottom();
 });
-
+const tryOut = document.getElementById('do-user-image')
+tryOut.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          });
+    }
+  });
 document.getElementById('upload-user-image').addEventListener('click', function () {
   document.getElementById('user-image-input').click();
 });
@@ -297,6 +305,7 @@ document.getElementById('do-user-image').addEventListener('click', function () {
   if (uploadedImage.src) {
     do_it('user-image');
   }
+   
 });
 document.getElementById('user-image-input').addEventListener('change', function (event) {
   const uploadedImage = document.getElementById('user-image');
@@ -363,3 +372,14 @@ const images = document.querySelectorAll(".sample-img");
         window.scrollTo(0, 0);
       });
     });
+    images.forEach((image) => {
+      image.addEventListener("click", () => {
+        if (window.innerWidth <= 768) { // You can adjust the width threshold as needed for mobile
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
