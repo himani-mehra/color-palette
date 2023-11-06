@@ -357,3 +357,9 @@ sampleImages.forEach(sampleImg => {
 
 
 
+const images = document.querySelectorAll(".sample-img");
+    images.forEach((image) => {
+      image.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+      });
+    });
