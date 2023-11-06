@@ -4,6 +4,7 @@ body {
     color: #222;
     margin: 0;
     padding: 0;  
+    width: 100%;
 }
 .left-column {
     display: flex;
@@ -20,10 +21,6 @@ body {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-body {
-  font-family: Poppins;
-  color: #222;
-}
 
 .container {
   display: flex;
@@ -241,5 +238,11 @@ header {
     .left-column,
     .right-column {
       width: 100%;
+    }
+    .styled-image {
+        width: 40vh;
+    }
+    .last-sec {
+        width: 44vh;
     }
   }
