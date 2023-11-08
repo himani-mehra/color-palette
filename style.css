@@ -74,7 +74,7 @@ input[type="file"] {
 .do-it-button {
   margin: 10px;
   font-size: 18px;
-  font-family: 'classic notes';
+  font-family: 'Poppins';
   color: white;
   background-color: transparent;
 }
@@ -171,13 +171,14 @@ input[type="file"] {
 }
 
 @font-face {
-  font-family: "classic notes";
-  src: url("Classic Notes.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("Poppins.ttf") format("truetype");
 }
 
 .footer-icon {
   text-align: center;
-  font-family: 'classic notes';
+  font-family: 'Poppins';
+  
 }
 
 header {
@@ -191,20 +192,20 @@ header {
 .heading {
   font-size: 27px;
   font-weight: bold;
-  font-family: 'classic notes';
+  font-family: 'Poppins';
 }
 
 .left-header {
-  font-family: 'classic notes';
+  font-family: 'Poppins';
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px;
 }
 
 .last-sec {
   padding: 10px;
   width: 70vh;
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
 }
 
@@ -214,14 +215,16 @@ header {
 }
 
 .need-sample {
-  font-family: 'classic notes';
+  font-family: 'Poppins';
   color: white;
   margin-top: 10px;
+  font-size: 13px;
 }
 
 .need-sample-2 {
-  font-family: 'classic notes';
+  font-family: 'Poppins';
   color: white;
+  font-size: 13px;
 }
 
 .sample-image {
@@ -327,6 +330,10 @@ header {
 
   .footer-icon {
     text-align: center;
-    font-family: 'classic notes';
+    font-family: 'Poppins';
+  }
+  .heading {
+    margin-left: 10px;
+    font-size: 20px;
   }
 }

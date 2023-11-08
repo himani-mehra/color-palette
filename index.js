@@ -378,3 +378,9 @@ images.forEach((image) => {
         }
     });
 });
+if (window.innerWidth <= 767) {
+    const heading = document.querySelector('.heading');
+    if (heading) {
+        heading.textContent = 'Here goes the color palette...';
+    }
+}
