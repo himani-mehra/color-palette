@@ -1,10 +1,13 @@
 
 body {
-    font-family: 'Poppins';
-    color: #222;
-    margin: 0;
-    padding: 0;  
-    width: 100%;
+  font-family: 'Poppins';
+  color: #222;
+   
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .left-column {
     display: flex;
@@ -234,23 +237,73 @@ header {
   height: 60px;
 }
 
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
+@media (max-width: 768px) {
   
-    .left-column,
-    .right-column {
-      width: 100%;
-    }
-    .styled-image {
-        width: 40vh;
-    }
-    .last-sec {
-        width: 52vh;
-    }
-    .button-container {
-        display: flex;
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
   }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .left-column {
+    order: 1; /* Set the order for left-column to come first */
+  }
+
+  .right-column {
+    order: 2; /* Set the order for right-column to come second */
+  }
+
+  .styled-image {
+    width: 40vh;
+  }
+
+  .last-sec {
+    width: 52vh;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .last-sec {
+    margin-top:0px;
+    padding-left:3em;
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .second-sub {
+    padding-left: 10px;
+    width: 40vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .need-sample {
+    margin-top:0px;
+    margin-right: 10px;
+  }
+
+  .sample-image {
+    width: 40vh;
+    display: flex; /* Display the four images in a row */
+  }
+
+  .sample-img {
+    flex: 1; /* Distribute available space equally */
+    max-width: 100%; /* Ensure images don't exceed container width */
+  }
+.image-container {
+  margin-top:15px
+}
+.button-container {
+  height: 16vh;
+}
+.clickable-text {
+  font-size:15px;
+}
+}
