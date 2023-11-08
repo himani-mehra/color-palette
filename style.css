@@ -1,32 +1,35 @@
-
 body {
   font-family: 'Poppins';
   color: #222;
-   
+
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .left-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #525251;
-  }
-  
-  .right-column {
-    color: #2c2f3d;
-    max-height: 100vh;
-    overflow-y: scroll;
-    padding: 1rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #525251;
+}
+
+.right-column {
+  color: #2c2f3d;
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
 .container {
   display: flex;
+  position: relative;
+  min-height: 100vh;
 }
 
 .image-container {
@@ -69,11 +72,11 @@ input[type="file"] {
 
 
 .do-it-button {
-    margin:10px;
-    font-size: 18px;
-    font-family: 'classic notes';
-    color: white;
-    background-color: transparent;
+  margin: 10px;
+  font-size: 18px;
+  font-family: 'classic notes';
+  color: white;
+  background-color: transparent;
 }
 
 .right-column::-webkit-scrollbar {
@@ -125,15 +128,15 @@ input[type="file"] {
 
 .code {
   padding-left: 10px;
-  width: 92%;
   height: 15%;
   font-size: 12px;
   color: #3b393b;
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.3);
   background-color: white;
 }
+
 .upload-icon {
-    cursor: pointer;
+  cursor: pointer;
   width: 15%;
   animation: iconScale 2s infinite alternate;
 }
@@ -166,13 +169,13 @@ input[type="file"] {
   width: 70vh;
   margin: 10px;
 }
+
 @font-face {
   font-family: "classic notes";
   src: url("Classic Notes.ttf") format("truetype");
 }
 
 .footer-icon {
-  width: 100vh;
   text-align: center;
   font-family: 'classic notes';
 }
@@ -184,6 +187,7 @@ header {
   font-family: Poppins;
   font-weight: bold;
 }
+
 .heading {
   font-size: 27px;
   font-weight: bold;
@@ -196,12 +200,14 @@ header {
   font-size: 20px;
   padding: 10px;
 }
+
 .last-sec {
-    padding:10px;
+  padding: 10px;
   width: 70vh;
-  margin-top:50px;
+  margin-top: 50px;
   display: flex;
 }
+
 .second-sub {
   display: flex;
   flex-direction: column;
@@ -212,10 +218,12 @@ header {
   color: white;
   margin-top: 10px;
 }
+
 .need-sample-2 {
   font-family: 'classic notes';
   color: white;
 }
+
 .sample-image {
   width: 50vh;
   display: flex;
@@ -232,13 +240,14 @@ header {
   cursor: pointer;
   transition: width 0.3s, height 0.3s;
 }
+
 .sample-img:hover {
   width: 60px;
   height: 60px;
 }
 
 @media (max-width: 768px) {
-  
+
   .container {
     flex-direction: column;
   }
@@ -249,11 +258,11 @@ header {
   }
 
   .left-column {
-    order: 1; /* Set the order for left-column to come first */
+    order: 1;
   }
 
   .right-column {
-    order: 2; /* Set the order for right-column to come second */
+    order: 2;
   }
 
   .styled-image {
@@ -270,9 +279,9 @@ header {
   }
 
   .last-sec {
-    margin-top:0px;
-    padding-left:3em;
-    flex-direction: column; /* Stack elements vertically */
+    margin-top: 0px;
+    padding-left: 3em;
+    flex-direction: column;
   }
 
   .second-sub {
@@ -284,23 +293,40 @@ header {
   }
 
   .need-sample {
-    margin-top:0px;
+    margin-top: 0px;
     margin-right: 10px;
   }
 
   .sample-image {
     width: 40vh;
-    display: flex; /* Display the four images in a row */
+    display: flex;
   }
 
   .sample-img {
-    flex: 1; /* Distribute available space equally */
-    max-width: 100%; /* Ensure images don't exceed container width */
+    flex: 1;
+    max-width: 100%;
   }
-.image-container {
-  margin-top:15px
-}
-.clickable-text {
-  font-size:15px;
-}
+
+  .image-container {
+    margin-top: 15px
+  }
+
+  .clickable-text {
+    font-size: 15px;
+  }
+
+  .code {
+    padding-left: 10px;
+    height: 15%;
+    font-size: 12px;
+    color: #3b393b;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    width: 100%;
+  }
+
+  .footer-icon {
+    text-align: center;
+    font-family: 'classic notes';
+  }
 }
