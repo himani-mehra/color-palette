@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function () {
     do_it('coke');
 });
 document.addEventListener("DOMContentLoaded", function () {
-    const text = "Upload any image...";
+    const text = "Upload";
     const header = document.getElementById("header");
     let index = 0;
 
