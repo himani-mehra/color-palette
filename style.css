@@ -176,10 +176,12 @@ input[type="file"] {
 
 .footer-icon {
   text-align: center;
-  font-family: 'Classic Notes';
-  color: white;
-  padding:10px;
-  margin-top:10px;
+    font-family: 'Classic Notes';
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    background-color: transparent;
 }
 header {
   background-color: #93938A;
