@@ -384,3 +384,5 @@ if (window.innerWidth <= 767) {
         heading.textContent = 'Here goes the color palette...';
     }
 }
+
+  

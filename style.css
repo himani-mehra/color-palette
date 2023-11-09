@@ -23,7 +23,7 @@ body {
   color: #2c2f3d;
   max-height: 100vh;
   overflow-y: scroll;
-  padding: 1rem;
+  padding-left: 1rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -174,17 +174,10 @@ input[type="file"] {
   margin: 10px;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("Poppins.ttf") format("truetype");
-}
-
 .footer-icon {
   text-align: center;
-  font-family: 'Poppins';
-  
+  font-family: 'Classic Notes';
 }
-
 header {
   background-color: #93938A;
   color: white;
