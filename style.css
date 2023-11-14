@@ -175,13 +175,14 @@ input[type="file"] {
 }
 
 .footer-icon {
+  width: 100%;
   text-align: center;
-    font-family: 'Classic Notes';
-    color: white;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    background-color: transparent;
+  font-family: 'Classic Notes';
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  background-color: transparent;
 }
 header {
   background-color: #93938A;
@@ -272,6 +273,7 @@ header {
 
   .right-column {
     order: 2;
+    margin-bottom: 40px;
   }
 
   .styled-image {
@@ -352,10 +354,10 @@ header {
     display: none;
   }
   .footer-icon.desktop {
+    background-color: white;
     display: block;
     color: black;
     font-family: 'Classic Notes';
-    padding-bottom:10px;
     font-size: 17px;
-  }
+  }  
 }

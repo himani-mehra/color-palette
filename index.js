@@ -385,4 +385,18 @@ if (window.innerWidth <= 767) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    var footer = document.getElementById('sticky-footer');
+  
+    window.addEventListener('scroll', function () {
+      var scrollPosition = window.scrollY + window.innerHeight;
+      var pageHeight = document.body.offsetHeight;
+      var threshold = pageHeight - window.innerHeight * 0.1;
+      if (scrollPosition >= threshold) {
+        footer.style.display = 'block';
+      } else {
+        footer.style.display = 'none';
+      }
+    });
+  });
   
