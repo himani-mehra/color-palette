@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(addLetter, 100);
         }
     }
-
     addLetter();
 });
 function outputColors(colors) {
@@ -318,6 +317,7 @@ document.getElementById('user-image-input').addEventListener('change', function 
         reader.readAsDataURL(file);
     }
 });
+
 function openCoolorsPalette() {
     var coolorsURL = "https://coolors.co/" + selectedPalette;
     var newWindow = window.open(coolorsURL, "_blank");
@@ -359,9 +359,6 @@ sampleImages.forEach(sampleImg => {
         do_it(imageId);
     });
 });
-
-
-
 const images = document.querySelectorAll(".sample-img");
 images.forEach((image) => {
     image.addEventListener("click", () => {
@@ -387,16 +384,15 @@ if (window.innerWidth <= 767) {
 
 document.addEventListener('DOMContentLoaded', function () {
     var footer = document.getElementById('sticky-footer');
-  
+
     window.addEventListener('scroll', function () {
-      var scrollPosition = window.scrollY + window.innerHeight;
-      var pageHeight = document.body.offsetHeight;
-      var threshold = pageHeight - window.innerHeight * 0.1;
-      if (scrollPosition >= threshold) {
-        footer.style.display = 'block';
-      } else {
-        footer.style.display = 'none';
-      }
+        var scrollPosition = window.scrollY + window.innerHeight;
+        var pageHeight = document.body.offsetHeight;
+        var threshold = pageHeight - window.innerHeight * 0.1;
+        if (scrollPosition >= threshold) {
+            footer.style.display = 'block';
+        } else {
+            footer.style.display = 'none';
+        }
     });
-  });
-  
+});
